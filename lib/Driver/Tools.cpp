@@ -7979,12 +7979,15 @@ void gnutools::CXXAMPLink::ConstructJob(Compilation &C, const JobAction &JA,
       LinkerArgString.append("hawaii");
     } else if (AMDGPUTarget.equals("AMD:AMDGPU:8:0:1")) {
       LinkerArgString.append("carrizo");
+    } else if (AMDGPUTarget.equals("AMD:AMDGPU:8:0:2")) {
+      LinkerArgString.append("tonga");
     } else if (AMDGPUTarget.equals("AMD:AMDGPU:8:0:3")) {
       LinkerArgString.append("fiji");
     } else if (AMDGPUTarget.equals("fiji") ||
                AMDGPUTarget.equals("kaveri") ||
                AMDGPUTarget.equals("carrizo") ||
-               AMDGPUTarget.equals("hawaii")) {
+               AMDGPUTarget.equals("hawaii") ||
+               AMDGPUTarget.equals("tonga")) {
       // directly use GPU family
       LinkerArgString.append(AMDGPUTarget);
     } else {
